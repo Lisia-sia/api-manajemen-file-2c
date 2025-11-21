@@ -39,24 +39,24 @@ app.post('/auth/register', async (req, res, next) => {
   }
 });
 
-// app.post('/auth/register-admin', async (req, res, next) => {
-//   const { username, password } = req.body;
-//   if (!username || !password || password.length < 6) {
-//     return res.status(400).json({ error: 'Username dan password (min 6 char) harus diisi' });
-//   }
-//   try {
-//     const salt = await bcrypt.genSalt(10);
-//     const hashedPassword = await bcrypt.hash(password, salt);
-//     const sql = 'INSERT INTO users (username, password, role) VALUES ($1, $2, $3) RETURNING id, username';
-//     const result = await db.query(sql, [username.toLowerCase(), hashedPassword, 'admin']);
-//     res.status(201).json(result.rows[0]);
-//   } catch (err) {
-//     if (err.code === '23505') {
-//       return res.status(409).json({ error: 'Username sudah digunakan' });
-//     }
-//     next(err);
-//   }
-// });
+app.post('/auth/register-admin', async (req, res, next) => {
+  const { username, password } = req.body;
+  if (!username || !password || password.length < 6) {
+    return res.status(400).json({ error: 'Username dan password (min 6 char) harus diisi' });
+  }
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+    const sql = 'INSERT INTO users (username, password, role) VALUES ($1, $2, $3) RETURNING id, username';
+    const result = await db.query(sql, [username.toLowerCase(), hashedPassword, 'admin']);
+    res.status(201).json(result.rows[0]);
+  } catch (err) {
+    if (err.code === '23505') {
+      return res.status(409).json({ error: 'Username sudah digunakan' });
+    }
+    next(err);
+  }
+});
 
 // app.post('/auth/login', async (req, res, next) => {
 //   const { username, password } = req.body;
