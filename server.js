@@ -58,26 +58,26 @@ app.post('/auth/register-admin', async (req, res, next) => {
   }
 });
 
-// app.post('/auth/login', async (req, res, next) => {
-//   const { username, password } = req.body;
-//   try {
-//     const sql = "SELECT * FROM users WHERE username = $1";
-//     const result = await db.query(sql, [username.toLowerCase()]);
-//     const user = result.rows[0];
-//     if (!user) {
-//       return res.status(401).json({ error: 'Kredensial tidak valid' });
-//     }
-//     const isMatch = await bcrypt.compare(password, user.password);
-//     if (!isMatch) {
-//       return res.status(401).json({ error: 'Kredensial tidak valid' });
-//     }
-//     const payload = { user: { id: user.id, username: user.username, role: user.role } };
-//     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
-//     res.json({ message: 'Login berhasil', token: token });
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+app.post('/auth/login', async (req, res, next) => {
+  const { username, password } = req.body;
+  try {
+    const sql = "SELECT * FROM users WHERE username = $1";
+    const result = await db.query(sql, [username.toLowerCase()]);
+    const user = result.rows[0];
+    if (!user) {
+      return res.status(401).json({ error: 'Kredensial tidak valid' });
+    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: 'Kredensial tidak valid' });
+    }
+    const payload = { user: { id: user.id, username: user.username, role: user.role } };
+    const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
+    res.json({ message: 'Login berhasil', token: token });
+  } catch (err) {
+    next(err);
+  }
+});
 
 // // === MOVIE ROUTES (Refactored for pg) ===
 // app.get('/movies', async (req, res, next) => {
