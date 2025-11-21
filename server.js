@@ -79,21 +79,21 @@ app.post('/auth/login', async (req, res, next) => {
   }
 });
 
-// // === MOVIE ROUTES (Refactored for pg) ===
-// app.get('/movies', async (req, res, next) => {
-//   const sql = `
-//     SELECT m.id, m.title, m.year, d.id as director_id, d.name as director_name
-//     FROM movies m
-//     LEFT JOIN directors d ON m.director_id = d.id
-//     ORDER BY m.id ASC
-//   `;
-//   try {
-//     const result = await db.query(sql);
-//     res.json(result.rows);
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+// === MOVIE ROUTES (Refactored for pg) ===
+app.get('/movies', async (req, res, next) => {
+  const sql = `
+    SELECT m.id, m.title, m.year, d.id as director_id, d.name as director_name
+    FROM movies m
+    LEFT JOIN directors d ON m.director_id = d.id
+    ORDER BY m.id ASC
+  `;
+  try {
+    const result = await db.query(sql);
+    res.json(result.rows);
+  } catch (err) {
+    next(err);
+  }
+});
 
 // app.get('/movies/:id', async (req, res, next) => {
 //   const sql = `
