@@ -1,0 +1,3454 @@
+{
+	"info": {
+		"_postman_id": "e728e2a9-856e-45e9-b3d3-c5d0da17c7a4",
+		"name": "Api-Manajemen-Film-dan-Sutradara",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48016074",
+		"_collection_link": "https://jihanmartha02-4544437.postman.co/workspace/JihanMarthaL.'s-Workspace~82bfb45b-21b3-46e1-85fa-64127b7e0506/collection/48016074-e728e2a9-856e-45e9-b3d3-c5d0da17c7a4?action=share&source=collection_link&creator=48016074"
+	},
+	"item": [
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "melihat_seluruh_film",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_film_movies/5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_film_movies/15 (tidak ditemukan)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "membuat_movies_id 6 -12",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Avatar\",\r\n  \"director\": \"James Cameron\",\r\n  \"year\": 2009\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mengupdate_movies_id 7",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari: Luwih Dowo, Luwih Medeni\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menghapus_movies_id 8",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_id 8 yang sudah dihapus (tidak ditemukan)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "directors",
+			"item": [
+				{
+					"name": "melihat_seluruh_sutradara",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/directors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_sutradara_directors/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/directors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_sutradara_directors/15  (tidak ditemukan)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/directors/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_sutradara_directors/5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/directors/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "membuat_directors_id 4 -12",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"James Cameron\",\r\n  \"birthYear\": 1954\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/directors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mengupdate_directory_id 5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"name\": \"Arclys (Jihan Martha Lisia\", \r\n  \"birthYear\": 2005 \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/directors/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menghapus_directors_id 10",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"name\": \"JML (Jihan Martha Lisia\", \r\n  \"birthYear\": 2005 \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/directors/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_id 10 yang sudah dihapus (tidak ditemukan)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/directors/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "percobaan_dikampus",
+			"item": [
+				{
+					"name": "localhost_3000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_seluruh_film",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_film_movies/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_film_movies/99 (tidak ditemukan)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "membuat_movies_id 4 - 6",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Si Kembar Transmigrasi\",\r\n    \"director\": \"Arclys\",\r\n    \"year\": 2021\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mengupdate_movies_id 5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Lyxia Anak CEO Tampan (Drama Singkat)\",\r\n    \"director\": \"Arclys\",\r\n    \"year\": 2024\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menghapus_movies_id 6",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat_id 6 yang sudah dihapus (tidak ditemukan)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"name\": \"JML (Jihan Martha Lisia\", \r\n  \"birthYear\": 2005 \r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uji databases movies",
+			"item": [
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "movies (ada 2 sebelum perubahan)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "movies/1",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "movies/99",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/movies/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menambahkan movies/3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari: Luwih Dowo, Luwih Medeni\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/movies/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Ceo Tampan Milik Lyxia\",\r\n  \"director\": \"Arclys\",\r\n  \"year\": 2024\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/4",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat movies/4 setelah dihapus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat data apakah duplikat",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uji databases directors",
+			"item": [
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors (ada 2 sebelum perubahan)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/directors/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/directors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/directors/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menambahkan directors/3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"James Cameron\",\r\n  \"birthYear\": 1954\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"James Cameron\",\r\n  \"birthYear\": 1954\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jihan Martha L.\",\r\n  \"birthYear\": 2004\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"James Cameron si keren\",\r\n  \"birthYear\": 1954\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/4",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jihan Martha Lisia\",\r\n  \"birthYear\": 2004\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat directors/4 setelah dihapus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jihan Martha Lisia\",\r\n  \"birthYear\": 2004\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "melihat data apakah duplikat",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interoperabilitas dengan Node.js (MongoDB)",
+			"item": [
+				{
+					"name": "Movies",
+					"item": [
+						{
+							"name": "melihat movies (kosong)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah movies pertama",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah movies kedua",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Pulp Fiction\",\r\n  \"director\": \"Quentin Tarantino\",\r\n  \"year\": 1994\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah movies ketiga",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Parasite\",\r\n  \"director\": \"Bong Joon-ho\",\r\n  \"year\": 2019\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah movies keempat",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah movies kelima",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah movies keenam",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus movies keempat(68fb362732442c8e1311df1d)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb362732442c8e1311df1d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb362732442c8e1311df1d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat setelah menambah movies",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat movies pertama (68fb35bf32442c8e1311df17)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb35bf32442c8e1311df17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb35bf32442c8e1311df17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat movies kedua (68fb35ec32442c8e1311df19)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb35ec32442c8e1311df19",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb35ec32442c8e1311df19"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat movies ketiga (68fb360832442c8e1311df1b)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb360832442c8e1311df1b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb360832442c8e1311df1b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat movies keempat(68fb362732442c8e1311df1d)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb362732442c8e1311df1d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb362732442c8e1311df1d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat movies kelima (68fb397732442c8e1311df29)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb397732442c8e1311df29",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb397732442c8e1311df29"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat movies keenam (68fb399032442c8e1311df2b)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb399032442c8e1311df2b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb399032442c8e1311df2b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mengubah title movies keenam (http://localhost:3300/movies/68fb399032442c8e1311df2b)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight keren\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb399032442c8e1311df2b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb399032442c8e1311df2b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Directors",
+					"item": [
+						{
+							"name": "melihat directors (kosong)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah directors pertama",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Quentin Tarantino\",\r\n  \"birthYear\": 1963\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah directors kedua",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Christopher Nolan\",\r\n  \"birthYear\": 1970\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah directors ketiga",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Bong Joon-ho\",\r\n  \"birthYear\": 1969\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah directors keempat",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Hayao Miyazaki\",\r\n  \"birthYear\": 1941\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah directors kelima",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Wes Anderson\",\r\n  \"birthYear\": 1969\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah directors keenam",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Arclys\",\r\n  \"birthYear\": 1969\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus directors keenam(68fb3c8432442c8e1311df3c)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors/68fb3c8432442c8e1311df3c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"68fb3c8432442c8e1311df3c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat setelah menambah directors",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat directors pertama (68fb3c0032442c8e1311df32)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors/68fb3c0032442c8e1311df32",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"68fb3c0032442c8e1311df32"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat directors kedua(68fb3c1d32442c8e1311df34)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Spirited Away\",\r\n  \"director\": \"Hayao Miyazaki\",\r\n  \"year\": 2001\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors/68fb3c1d32442c8e1311df34",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"68fb3c1d32442c8e1311df34"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat directors ketiga(68fb3c3732442c8e1311df36)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3300/directors/68fb3c3732442c8e1311df36",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"68fb3c3732442c8e1311df36"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat directors keempat (68fb3c4f32442c8e1311df38)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3300/directors/68fb3c4f32442c8e1311df38",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"68fb3c4f32442c8e1311df38"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat directors kelima (68fb3c6a32442c8e1311df3a)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3300/directors/68fb3c6a32442c8e1311df3a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"68fb3c6a32442c8e1311df3a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat directors keenam (68fb3c8432442c8e1311df3c)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Dark Knight keren\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"year\": 2008\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/68fb3c8432442c8e1311df3c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"68fb3c8432442c8e1311df3c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mengubah nama directors kelima",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Wes Anderson keren\",\r\n  \"birthYear\": 1969\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors/68fb3c6a32442c8e1311df3a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"68fb3c6a32442c8e1311df3a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "UJI Autentikasi Sebuah Akun",
+			"item": [
+				{
+					"name": "Register dan Login",
+					"item": [
+						{
+							"name": "registerasi pengguna",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "$2b$10$kojTUkkYm6KcI.vjPx1tFOEVEs3qL9s6Uu1p1hJ9k9JVvcOHrYT3G",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Lysia\", \r\n    \"password\": \"muew1922\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login ke akun 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Lysia\", \r\n    \"password\": \"muew1922\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login ke akun 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"JihanMartha\",\r\n    \"password\": \"Hanky192\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login ke akun 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Jihan\", \r\n    \"password\": \"Hanky1922\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movies",
+					"item": [
+						{
+							"name": "all movies sebelum ditambah",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Inception\", \r\n    \"director\": \"Nolan\", \r\n    \"year\": 2010\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah dengan token akun 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJ1c2VybmFtZSI6Imx5c2lhIn0sImlhdCI6MTc2MTg4MzA1OCwiZXhwIjoxNzYxODg2NjU4fQ.Ey-gqqN7AC-qz_zGuH4SCKxLLeiuemTj_BJuFt9rfx8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Inception\", \r\n    \"director\": \"Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah dengan token akun 2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImppaGFubWFydGhhIn0sImlhdCI6MTc2MTg4MzMzMCwiZXhwIjoxNzYxODg2OTMwfQ.P6XTo6zN3xAuFy22Bu9QyhycIIsN_jf6JHwEnPTAtMc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Interstellar\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2014\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "memperbarui data movies/23 token akun 1",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJ1c2VybmFtZSI6Imx5c2lhIn0sImlhdCI6MTc2MTg4MzU4NSwiZXhwIjoxNzYxODg3MTg1fQ.KHfA1eoSvsZbkfuIxnLNRnqP3UGWOCzm_36_9xPR9Fg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Inception\", \r\n    \"director\": \"keren\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/23",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"23"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "memperbarui data movies/24 token akun 2",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImppaGFubWFydGhhIn0sImlhdCI6MTc2MTg4NjM0OSwiZXhwIjoxNzYxODg5OTQ5fQ.H2tjcEI3ulenevtYgd-MNMEW_G7pC4pUaxoPy5V9FrU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Interstellar\", \r\n    \"director\": \"Si Ceo Tampan\", \r\n    \"year\": 2014\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/24",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"24"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6ImppaGFuIn0sImlhdCI6MTc2MTg4NjU4OCwiZXhwIjoxNzYxODkwMTg4fQ.871N5RExqoSUC_kvp8c2VeIaeiQJsuFPVGo25MQEMHA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"title\": \"The Godfather\",\r\n    \"director\": \"Francis Ford Coppola\",\r\n    \"year\": 1972\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6ImppaGFuIn0sImlhdCI6MTc2MTg4NjU4OCwiZXhwIjoxNzYxODkwMTg4fQ.871N5RExqoSUC_kvp8c2VeIaeiQJsuFPVGo25MQEMHA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Pulp Fiction\",\r\n    \"director\": \"Quentin Tarantino\",\r\n    \"year\": 1994\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus data movies/26 dengan token akun 3",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6ImppaGFuIn0sImlhdCI6MTc2MTg4NjU4OCwiZXhwIjoxNzYxODkwMTg4fQ.871N5RExqoSUC_kvp8c2VeIaeiQJsuFPVGo25MQEMHA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"title\": \"The Godfather\",\r\n    \"director\": \"Francis Ford Coppola\",\r\n    \"year\": 1972\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/26",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"26"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Uji coba register dan login serta menambah menghapus dan mengupdate menggunakan token"
+				},
+				{
+					"name": "Directors",
+					"item": [
+						{
+							"name": "all directors sebelum ditambahkan",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Hayao Miyazaki\", \r\n    \"birthYear\": 1941 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Francis Ford Coppola\",\r\n    \"birthYear\": 1939\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Alfred Hitchcock\", \r\n    \"birthYear\": 1899 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Akira Kurosawa\", \r\n    \"birthYear\": 1910 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Sofia Coppola\", \r\n    \"birthYear\": 1971 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data dengan token akun 3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Greta Gerwig\", \r\n    \"birthYear\": 1983 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "memperbarui data directors token akun 1",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Hayao Miyazaki Sikeren\", \r\n    \"birthYear\": 1941 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "memperbarui data directors token akun 2",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Alfred Hitchcock Sikeren\", \r\n    \"birthYear\": 1899 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "memperbarui data directors token akun 3",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"Sofia Coppola Sicantik\", \r\n    \"birthYear\": 1971 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus data dengan token akun 1",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus data dengan token akun 2",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus data dengan token akun 3",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Uji coba register dan login serta menambah menghapus dan mengupdate menggunakan token"
+				}
+			]
+		},
+		{
+			"name": "Uji RBAC Auth & Token",
+			"item": [
+				{
+					"name": "Register dan Login sebagai user dan admin",
+					"item": [
+						{
+							"name": "Registrasi User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Lysia\", \r\n    \"password\": \"muew1922\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrasi Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"xia_admin1\",\r\n  \"password\": \"H4lo\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/register-admin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"register-admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Sebagai User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Lysia\", \r\n    \"password\": \"muew1922\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data movies/6 dengan user lysia",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNDk5ODQyLCJleHAiOjE3NjI1MDM0NDJ9.WV-0SL0Ud5vFDvHFDsuWFJA4E83VXfbHNEOh-rH8lYI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login sebagai admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"xia_admin1\",\r\n  \"password\": \"H4lo\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus movies/6 (pakai token user akan error)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNTAwODQwLCJleHAiOjE3NjI1MDQ0NDB9.k4rXg3wU_kIKRxpGu3nB_BO2-354l5xQ72Mw7WlBamA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus movies/6 (pakai token admin akan berhasil)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InhpYV9hZG1pbjEiLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzYyNTAwNjk1LCJleHAiOjE3NjI1MDQyOTV9.zysnmGVDjEBSNO-TjHH3LX_n9o6mQcvMpoHyzKofIc4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movies",
+					"item": [
+						{
+							"name": "all movies sebelum ditambah",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3300/movies/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data movies/6 dengan user lysia",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNDk5ODQyLCJleHAiOjE3NjI1MDM0NDJ9.WV-0SL0Ud5vFDvHFDsuWFJA4E83VXfbHNEOh-rH8lYI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus movies/6 (pakai token user akan error)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNTAwODQwLCJleHAiOjE3NjI1MDQ0NDB9.k4rXg3wU_kIKRxpGu3nB_BO2-354l5xQ72Mw7WlBamA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus movies/6 (pakai token admin akan berhasil)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InhpYV9hZG1pbjEiLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzYyNTAwNjk1LCJleHAiOjE3NjI1MDQyOTV9.zysnmGVDjEBSNO-TjHH3LX_n9o6mQcvMpoHyzKofIc4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Melihat setelah dihapus dan diedit datanya oleh admin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNDk5ODQyLCJleHAiOjE3NjI1MDM0NDJ9.WV-0SL0Ud5vFDvHFDsuWFJA4E83VXfbHNEOh-rH8lYI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tugasnya atau Directorsnya",
+					"item": [
+						{
+							"name": "menambah data directors/6 dengan user lysia",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNDk5ODQyLCJleHAiOjE3NjI1MDM0NDJ9.WV-0SL0Ud5vFDvHFDsuWFJA4E83VXfbHNEOh-rH8lYI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Arclys\",\r\n  \"birthYear\": 2004\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all directors sebelum ditambah",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNDk5ODQyLCJleHAiOjE3NjI1MDM0NDJ9.WV-0SL0Ud5vFDvHFDsuWFJA4E83VXfbHNEOh-rH8lYI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus directors/6 (pakai token user akan error)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNTAwODQwLCJleHAiOjE3NjI1MDQ0NDB9.k4rXg3wU_kIKRxpGu3nB_BO2-354l5xQ72Mw7WlBamA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Arclys\",\r\n  \"birthYear\": 2004\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "melihat data setelah ditambahkan",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNDk5ODQyLCJleHAiOjE3NjI1MDM0NDJ9.WV-0SL0Ud5vFDvHFDsuWFJA4E83VXfbHNEOh-rH8lYI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus directors/6 (pakai token admin akan berhasil)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InhpYV9hZG1pbjEiLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzYyNTAwNjk1LCJleHAiOjE3NjI1MDQyOTV9.zysnmGVDjEBSNO-TjHH3LX_n9o6mQcvMpoHyzKofIc4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Arclys\",\r\n  \"birthYear\": 2004\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/directors/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menambah data movies/6 dengan user lysia",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNDk5ODQyLCJleHAiOjE3NjI1MDM0NDJ9.WV-0SL0Ud5vFDvHFDsuWFJA4E83VXfbHNEOh-rH8lYI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus movies/6 (pakai token user akan error)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imx5c2lhIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzYyNTAwODQwLCJleHAiOjE3NjI1MDQ0NDB9.k4rXg3wU_kIKRxpGu3nB_BO2-354l5xQ72Mw7WlBamA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "menghapus movies/6 (pakai token admin akan berhasil)",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJ1c2VybmFtZSI6InhpYV9hZG1pbjEiLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzYyNTAwNjk1LCJleHAiOjE3NjI1MDQyOTV9.zysnmGVDjEBSNO-TjHH3LX_n9o6mQcvMpoHyzKofIc4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Godfather\", \r\n    \"director\": \"Christopher Nolan\", \r\n    \"year\": 2010\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3300/movies/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"movies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Melihat setelah dihapus dan diedit datanya oleh admin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3300/directors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3300",
+									"path": [
+										"directors"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "createdMovieId",
+			"value": ""
+		}
+	]
+}

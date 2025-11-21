@@ -1,0 +1,808 @@
+{
+	"info": {
+		"_postman_id": "1dd787cd-c6c3-4ceb-881b-db9e6089f669",
+		"name": "Api-Manajemen-Film 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48016074",
+		"_collection_link": "https://jihanmartha02-4544437.postman.co/workspace/JihanMarthaL.'s-Workspace~82bfb45b-21b3-46e1-85fa-64127b7e0506/collection/48016074-1dd787cd-c6c3-4ceb-881b-db9e6089f669?action=share&source=collection_link&creator=48016074"
+	},
+	"item": [
+		{
+			"name": "positif movies dan directors",
+			"item": [
+				{
+					"name": "/movies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"KKN di Desa Penari: Luwih Dowo, Luwih Medeni\",\r\n  \"director\": \"Awi Suryadi\",\r\n  \"year\": 2022\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies tests",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 200 Ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response memiliki Content-Type JSON\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body response berisi pesan error\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an(\"array\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 200 OK\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Respons adalah objek dengan skema yang benar\", () => {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('object');\r",
+									"    pm.expect(jsonData).to.have.all.keys('id', 'title', 'director', 'year');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Nilai ID di dalam respons sesuai dengan yang diminta\", () => {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(1); // Ganti 1 sesuai dengan ID yang diuji\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body respons adalah sebuah array\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Film Uji Postman\",\r\n    \"director\": \"Jihan Martha Lisia\",\r\n    \"year\": 2025\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors tests",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body respons adalah sebuah array\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/directors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 200 OK\", () => {\r",
+									"    // Memastikan koneksi berhasil dan data ditemukan\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Respons adalah objek dengan skema yang benar\", () => {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    \r",
+									"    // 1. Memastikan respons adalah objek tunggal\r",
+									"    pm.expect(jsonData).to.be.an('object');\r",
+									"    \r",
+									"    // 2. Memastikan SEMUA kunci yang dikembalikan (id, name, birthYear) harus ada.\r",
+									"    // Kita gunakan to.have.all.keys karena Anda ingin skema harus persis\r",
+									"    pm.expect(jsonData).to.have.all.keys('id', 'name', 'birthYear');\r",
+									"    \r",
+									"    // Memastikan tipe data sudah benar\r",
+									"    pm.expect(jsonData.id).to.be.a('number');\r",
+									"    pm.expect(jsonData.name).to.be.a('string');\r",
+									"    pm.expect(jsonData.birthYear).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Nilai ID di dalam respons sesuai dengan yang diminta\", () => {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    \r",
+									"    // Memastikan ID yang dikembalikan adalah 1\r",
+									"    pm.expect(jsonData.id).to.eql(1); \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Film Uji Postman\",\r\n    \"director\": \"Jihan Martha Lisia\",\r\n    \"year\": 2025\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "negatif",
+			"item": [
+				{
+					"name": "/movies/9999",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 404 Not Found\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response memiliki Content-Type JSON\", function () {\r",
+									"    // Memastikan respons adalah JSON.\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body response berisi pesan error yang valid\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an(\"object\");\r",
+									"    pm.expect(jsonData).to.have.property(\"error\"); \r",
+									"    pm.expect(jsonData.error).to.include(\"Film tidak ditemukan\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/movies/9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/directors/9999",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 404 Not Found\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body response berisi pesan error yang valid\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('object');\r",
+									"    pm.expect(jsonData).to.have.property('error'); \r",
+									"    pm.expect(jsonData.error).to.include(\"tidak ditemukan\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Film Uji Postman\",\r\n    \"director\": \"Jihan Martha Lisia\",\r\n    \"year\": 2025\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "/movies/6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 201 Created\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Respons berisi ID film yang baru dibuat dan menyimpannya\", () => {\r",
+									"    // Pastikan kode ini dieksekusi setelah mendapatkan status 201\r",
+									"    const jsonData = pm.response.json();\r",
+									"    \r",
+									"    // 1. Validasi ID\r",
+									"    pm.expect(jsonData.id).to.be.a('number');\r",
+									"    \r",
+									"    // 2. KOREKSI PENTING: Pastikan penulisan 'collectionVariables.set' sudah benar\r",
+									"    // Tidak boleh ada huruf kapital pada 'collectionVariables' atau 'set'\r",
+									"    pm.collectionVariables.set(\"createdMovieId\", jsonData.id); \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Film Uji Postman\",\r\n    \"director\": \"Jihan Martha Lisia\",\r\n    \"year\": 2025\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 200 OK\", () => {\r",
+									"    pm.response.to.have.status(200); \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Respons body mencerminkan data yang telah diperbarui\", () => {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.year).to.eql(2025); \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Film Uji Postman\",\r\n    \"director\": \"Jihan Martha \",\r\n    \"year\": 2025\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies/{{createdMovieId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"{{createdMovieId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 204 No Content\", () => {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Film Uji Postman\",\r\n    \"director\": \"Jihan Martha L.\",\r\n    \"year\": 2025\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3300/movies/{{createdMovieId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"{{createdMovieId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menampilkan data setelah dihapus dengan id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 404 Not Found\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"pm.test(\"Body response berisi pesan error\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an(\"object\");\r",
+									"    pm.expect(jsonData).to.have.property(\"error\"); \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/movies/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"movies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "directors",
+			"item": [
+				{
+					"name": "directors/5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 201 Created\", () =>{\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Respons berisi ID sutradara baru dan menyimpannya\", () => {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.be.a('number');\r",
+									"    pm.expect(jsonData.name).to.be.a('string'); \r",
+									"    pm.collectionVariables.set(\"createdDirectorId\", jsonData.id);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Greta Gerwig\",\r\n    \"birthYear\": 1983\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 200 OK\", () => {\r",
+									"    pm.response.to.have.status(200); \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Respons body mencerminkan data yang telah diperbarui\", () => {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    \r",
+									"    // Sesuaikan nilai ini dengan NAMA yang Anda kirim di Body PUT Anda\r",
+									"    const expectedName = \"Greta Gerwig Keren\"; \r",
+									"    \r",
+									"    // 🌟 KOREKSI DI SINI: Ganti 1983 menjadi 1982 🌟\r",
+									"    const expectedBirthYear = 1982; \r",
+									"    \r",
+									"    // Validasi Name\r",
+									"    pm.expect(jsonData.name).to.eql(expectedName);\r",
+									"    \r",
+									"    // Validasi BirthYear\r",
+									"    pm.expect(jsonData.birthYear).to.eql(expectedBirthYear);\r",
+									"    \r",
+									"    // Opsional: Validasi ID\r",
+									"    const directorId = pm.collectionVariables.get(\"createdDirectorId\");\r",
+									"    pm.expect(jsonData.id).to.eql(directorId);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Greta Gerwig Keren\",\r\n    \"birthYear\": 1982\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/{{createdDirectorId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"{{createdDirectorId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "directors/5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 204 No Content\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Respons body kosong\", function () {\r",
+									"    pm.expect(pm.response.text()).to.be.empty;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Greta Gerwig Keren\",\r\n    \"birthYear\": 1982\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/{{createdDirectorId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"{{createdDirectorId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "menampilkan data setelah dihapus dengan id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status respons adalah 404 Not Found\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"pm.test(\"Body response berisi pesan error\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an(\"object\");\r",
+									"    pm.expect(jsonData).to.have.property(\"error\"); \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/directors/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"directors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "createdMovieId",
+			"value": ""
+		},
+		{
+			"key": "createdDirectorId",
+			"value": ""
+		}
+	]
+}
