@@ -192,6 +192,33 @@ app.post('/directors', authenticateToken, async (req, res, next) => {
   }
 });
 
+app.put('/directors/:id', [authenticateToken, authorizeRole('admin')], async (req, res, next) => {
+  const { name, birthYear } = req.body;
+  const sql = 'UPDATE directors SET name = $1, birth_year = $2 WHERE id = $3 RETURNING *';
+  try {
+    const result = await db.query(sql, [name, birthYear, req.params.id]);
+    if (result.rowCount === 0) {
+      return res.status(404).json({ error: 'Sutradara tidak ditemukan' });
+    }
+    res.json(result.rows[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.delete('/directors/:id', [authenticateToken, authorizeRole('admin')], async (req, res, next) => {
+  const sql = 'DELETE FROM directors WHERE id = $1 RETURNING *';
+  try {
+    const result = await db.query(sql, [req.params.id]);
+    if (result.rowCount === 0) {
+      return res.status(404).json({ error: 'Sutradara tidak ditemukan' });
+    }
+    res.status(204).send();
+  } catch (err) {
+    next(err);
+  }
+});
+
 // === FALLBACK & ERROR HANDLING ===
 app.use((req, res) => {
   res.status(404).json({ error: 'Rute tidak ditemukan' });
