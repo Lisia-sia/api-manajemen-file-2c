@@ -99,7 +99,7 @@ app.get('/movies/:id', async (req, res, next) => {
   const sql = `
     SELECT m.id, m.title, m.year, d.id as director_id, d.name as director_name
     FROM movies m
-    LEFT LEFT JOIN directors d ON m.director_id = d.id
+    LEFT JOIN directors d ON m.director_id = d.id
     WHERE m.id = $1
   `;
   try {
@@ -113,6 +113,7 @@ app.get('/movies/:id', async (req, res, next) => {
   }
 });
 
+
 app.post('/movies', authenticateToken, async (req, res, next) => {
   const { title, director_id, year } = req.body;
   if (!title || !director_id || !year) {
@@ -123,9 +124,13 @@ app.post('/movies', authenticateToken, async (req, res, next) => {
     const result = await db.query(sql, [title, director_id, year]);
     res.status(201).json(result.rows[0]);
   } catch (err) {
+    if (err.code === '23503') {
+      return res.status(400).json({ error: 'director_id tidak ditemukan di tabel directors' });
+    }
     next(err);
   }
 });
+
 
 app.put('/movies/:id', [authenticateToken, authorizeRole('admin')], async (req, res, next) => {
   const { title, director_id, year } = req.body;
