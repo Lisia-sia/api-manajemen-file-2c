@@ -123,7 +123,7 @@ app.get('/movies', async (req, res, next) => {
   }
 });
 
-// CREATE MOVIE
+// CREATE MOVIES
 app.post('/movies', authenticateToken, async (req, res, next) => {
   const { title, director_id, year } = req.body;
 
@@ -147,6 +147,57 @@ app.post('/movies', authenticateToken, async (req, res, next) => {
     next(err);
   }
 });
+
+app.get('/movies/:id', async (req, res, next) => {
+  const { id } = req.params;
+  const sql = `
+    SELECT m.id, m.title, m."year",
+           d.id AS director_id, d.name AS director_name
+    FROM movies m
+    LEFT JOIN directors d ON m.director_id = d.id
+    WHERE m.id = $1
+  `;
+  try {
+    const result = await db.query(sql, [id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Movie tidak ditemukan' });
+    res.json(result.rows[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.put('/movies/:id', authenticateToken, async (req, res, next) => {
+  const { id } = req.params;
+  const { title, director_id, year } = req.body;
+  if (!title || !director_id || !year) return res.status(400).json({ error: 'title, director_id, year wajib diisi' });
+
+  const sql = `
+    UPDATE movies SET title=$1, director_id=$2, "year"=$3
+    WHERE id=$4
+    RETURNING *
+  `;
+  try {
+    const result = await db.query(sql, [title, director_id, year, id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Movie tidak ditemukan' });
+    res.json(result.rows[0]);
+  } catch (err) {
+    if (err.code === '23503') return res.status(400).json({ error: 'director_id tidak ditemukan' });
+    next(err);
+  }
+});
+
+// DELETE MOVIE
+app.delete('/movies/:id', authenticateToken, async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const result = await db.query('DELETE FROM movies WHERE id=$1 RETURNING *', [id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Movie tidak ditemukan' });
+    res.json({ message: 'Movie berhasil dihapus', movie: result.rows[0] });
+  } catch (err) {
+    next(err);
+  }
+});
+
 
 
 // ===================== DIRECTORS ============================
@@ -185,6 +236,44 @@ app.post('/directors',
   }
 );
 
+app.get('/directors/:id', async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const result = await db.query('SELECT id, name, "birthYear" FROM directors WHERE id=$1', [id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Director tidak ditemukan' });
+    res.json(result.rows[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// UPDATE DIRECTOR (ADMIN ONLY)
+app.put('/directors/:id', authenticateToken, authorizeRole('admin'), async (req, res, next) => {
+  const { id } = req.params;
+  const { name, birthYear } = req.body;
+  if (!name) return res.status(400).json({ error: 'name wajib diisi' });
+
+  const sql = 'UPDATE directors SET name=$1, "birthYear"=$2 WHERE id=$3 RETURNING *';
+  try {
+    const result = await db.query(sql, [name, birthYear || null, id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Director tidak ditemukan' });
+    res.json(result.rows[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE DIRECTOR (ADMIN ONLY)
+app.delete('/directors/:id', authenticateToken, authorizeRole('admin'), async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const result = await db.query('DELETE FROM directors WHERE id=$1 RETURNING *', [id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Director tidak ditemukan' });
+    res.json({ message: 'Director berhasil dihapus', director: result.rows[0] });
+  } catch (err) {
+    next(err);
+  }
+});
 
 // ===================== ERROR HANDLER ============================
 app.use((err, req, res, next) => {
