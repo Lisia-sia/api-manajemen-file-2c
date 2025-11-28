@@ -178,6 +178,20 @@ app.get('/directors/:id', async (req, res, next) => {
   }
 });
 
+app.post('/directors', authenticateToken, async (req, res, next) => {
+  const { name, birthYear } = req.body;
+  if (!name || !birthYear) {
+    return res.status(400).json({ error: 'name dan birthYear wajib diisi' });
+  }
+  const sql = 'INSERT INTO directors (name, birth_year) VALUES ($1, $2) RETURNING *';
+  try {
+    const result = await db.query(sql, [name, birthYear]);
+    res.status(201).json(result.rows[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // === FALLBACK & ERROR HANDLING ===
 app.use((req, res) => {
   res.status(404).json({ error: 'Rute tidak ditemukan' });
