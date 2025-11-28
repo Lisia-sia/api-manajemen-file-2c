@@ -165,6 +165,19 @@ app.get('/directors', async (req, res, next) => {
   }
 });
 
+app.get('/directors/:id', async (req, res, next) => {
+  const sql = `SELECT * FROM directors WHERE id = $1`;
+  try {
+    const result = await db.query(sql, [req.params.id]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Sutradara tidak ditemukan' });
+    }
+    res.json(result.rows[0]);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // === FALLBACK & ERROR HANDLING ===
 app.use((req, res) => {
   res.status(404).json({ error: 'Rute tidak ditemukan' });
