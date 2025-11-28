@@ -154,6 +154,17 @@ app.delete('/movies/:id', [authenticateToken, authorizeRole('admin')], async (re
   }
 });
 
+// Direktors
+app.get('/directors', async (req, res, next) => {
+  const sql = `SELECT * FROM directors ORDER BY id ASC`;
+  try {
+    const result = await db.query(sql);
+    res.json(result.rows);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // === FALLBACK & ERROR HANDLING ===
 app.use((req, res) => {
   res.status(404).json({ error: 'Rute tidak ditemukan' });
