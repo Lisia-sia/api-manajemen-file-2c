@@ -141,18 +141,18 @@ app.put('/movies/:id', [authenticateToken, authorizeRole('admin')], async (req, 
   }
 });
 
-// app.delete('/movies/:id', [authenticateToken, authorizeRole('admin')], async (req, res, next) => {
-//   const sql = 'DELETE FROM movies WHERE id = $1 RETURNING *';
-//   try {
-//     const result = await db.query(sql, [req.params.id]);
-//     if (result.rowCount === 0) {
-//       return res.status(404).json({ error: 'Film tidak ditemukan' });
-//     }
-//     res.status(204).send();
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+app.delete('/movies/:id', [authenticateToken, authorizeRole('admin')], async (req, res, next) => {
+  const sql = 'DELETE FROM movies WHERE id = $1 RETURNING *';
+  try {
+    const result = await db.query(sql, [req.params.id]);
+    if (result.rowCount === 0) {
+      return res.status(404).json({ error: 'Film tidak ditemukan' });
+    }
+    res.status(204).send();
+  } catch (err) {
+    next(err);
+  }
+});
 
 // === FALLBACK & ERROR HANDLING ===
 app.use((req, res) => {
